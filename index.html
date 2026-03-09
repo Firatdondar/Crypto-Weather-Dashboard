@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto & Weather Dashboard</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-bar"></i> API Data Dashboard</h1>
+            <p class="tagline">Real-Time Crypto & Weather Data with JavaScript</p>
+        </header>
+
+        <main>
+            <section id="data-section">
+                <div class="data-card" id="crypto-data">
+                    <h2><i class="fab fa-bitcoin"></i> Crypto Prices</h2>
+                    <p id="crypto-info" class="loading-text">Loading...</p>
+                </div>
+
+                <div class="data-card" id="weather-data">
+                    <h2><i class="fas fa-cloud-sun"></i> Weather (Şanlıurfa)</h2>
+                    <p id="weather-info" class="loading-text">Loading...</p>
+                </div>
+            </section>
+
+            <section id="action-section">
+                <button id="fetch-button" class="action-button"><i class="fas fa-sync-alt"></i> Refresh Data</button>
+                <button id="encrypt-button" class="action-button primary"><i class="fas fa-lock"></i> Encrypt</button>
+                <button id="decrypt-button" class="action-button secondary"><i class="fas fa-unlock"></i> Decrypt</button>
+            </section>
+
+            <section id="visualization-section">
+                <div class="chart-container">
+                    <h2>Bitcoin Price History (Last 7 Days)</h2>
+                    <canvas id="bitcoin-price-chart"></canvas>
+                </div>
+
+                <div class="indicator-container">
+                    <h2>Current Temperature</h2>
+                    <div class="temperature-indicator">
+                        <span id="current-temperature">-</span>°C
+                    </div>
+                </div>
+            </section>
+
+            <section id="result-section">
+                <div id="encrypted-data" class="result-card" style="display: none;">
+                    <h2><i class="fas fa-shield-alt"></i> Encrypted Data</h2>
+                    <pre id="encrypted-text"></pre>
+                </div>
+
+                <div id="decrypted-data" class="result-card" style="display: none;">
+                    <h2><i class="fas fa-key"></i> Decrypted Data</h2>
+                    <table id="decrypted-table">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Symmetric Encryption Demo Project</p>
+        </footer>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
