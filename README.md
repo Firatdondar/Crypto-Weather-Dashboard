@@ -2,8 +2,6 @@
 
 A real-time data dashboard built with vanilla JavaScript that fetches live cryptocurrency prices and weather data, then demonstrates AES symmetric encryption/decryption using CryptoJS.
 
-![Dashboard Preview](assets/preview.png)
-
 ---
 
 ## ✨ Features
@@ -23,7 +21,6 @@ crypto-weather-dashboard/
 ├── src/
 │   ├── script.js       # All JavaScript logic
 │   └── style.css       # All styles
-├── assets/             # Static assets (screenshots, icons, etc.)
 ├── .gitignore
 └── README.md
 ```
