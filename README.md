@@ -1,74 +1,64 @@
-# 📊 Crypto & Weather Dashboard
+# 📊 Crypto & Weather Live Dashboard
 
-A real-time data dashboard built with vanilla JavaScript that fetches live cryptocurrency prices and weather data, then demonstrates AES symmetric encryption/decryption using CryptoJS.
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.x-FF6384?logo=chartdotjs&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+
+A real-time financial and meteorological web dashboard built with **Vanilla JavaScript (ES6+)**, **Chart.js**, and **CryptoJS**. It fetches live cryptocurrency market data and local weather metrics via public REST APIs and demonstrates client-side **AES-256 symmetric payload encryption**.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- 📈 **Live Crypto Prices** — Bitcoin & Ethereum prices in TRY via CoinGecko API
-- 🌤️ **Live Weather** — Current temperature, humidity, and conditions for Şanlıurfa via Open-Meteo
-- 📉 **Bitcoin Chart** — 7-day price history rendered with Chart.js
-- 🔐 **AES Encryption** — Encrypt and decrypt fetched data in-browser using CryptoJS
+- **📈 Live Cryptocurrency Ticker:** Fetches real-time **Bitcoin (BTC)** and **Ethereum (ETH)** market prices in TRY via the CoinGecko REST API.
+- **📉 7-Day Interactive Price Chart:** Renders historical Bitcoin price trends using **Chart.js** with responsive canvas scaling.
+- **🌤️ Real-Time Weather Telemetry:** Displays live temperature, humidity, wind speed, and atmospheric conditions via the Open-Meteo API.
+- **🔐 Client-Side AES Encryption Demo:** Encrypts and decrypts live JSON telemetry payloads in-browser using **CryptoJS AES**.
 
 ---
 
 ## 🗂️ Project Structure
 
-```
-crypto-weather-dashboard/
-├── index.html          # Main HTML entry point
+```text
+Crypto-Weather-Dashboard/
 ├── src/
-│   ├── script.js       # All JavaScript logic
-│   └── style.css       # All styles
-├── .gitignore
-└── README.md
+│   ├── script.js            # API clients, Chart.js rendering & AES logic
+│   └── style.css            # Responsive dashboard layout & cards
+├── index.html               # Main application entry point
+├── LICENSE                  # MIT License
+└── README.md                # Project documentation
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-### Option 1 — Open directly in browser
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Firatdondar/Crypto-Weather-Dashboard.git
+cd Crypto-Weather-Dashboard
+```
 
-Just open `index.html` in any modern browser. No build step or server required.
-
-### Option 2 — Use VS Code Live Server (recommended)
-
-1. Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in VS Code
-2. Right-click `index.html` → **Open with Live Server**
-3. The dashboard opens at `http://127.0.0.1:5500`
-
----
-
-## 🔌 APIs Used
-
-| API | Purpose | Docs |
-|-----|---------|------|
-| [CoinGecko](https://www.coingecko.com/en/api) | Crypto prices & history | Free, no key required |
-| [Open-Meteo](https://open-meteo.com/) | Weather data | Free, no key required |
+### 2. Launch in Browser
+Open `index.html` directly in any modern browser, or serve locally:
+```bash
+python -m http.server 8080
+```
+Then visit `http://localhost:8080`.
 
 ---
 
-## 📦 Dependencies (via CDN)
+## 🔌 External APIs
 
-| Library | Version | Purpose |
-|---------|---------|---------|
-| [Chart.js](https://www.chartjs.org/) | latest | Price history chart |
-| [CryptoJS](https://cryptojs.gitbook.io/docs/) | 4.1.1 | AES encryption |
-| [Font Awesome](https://fontawesome.com/) | 6.0.0-beta3 | Icons |
-| [Google Fonts](https://fonts.google.com/) | — | Montserrat & Open Sans |
-
----
-
-## ⚠️ Security Notice
-
-> The encryption key in `script.js` is **hardcoded for demonstration purposes only**.  
-> In a production application, **never expose secret keys on the client side**.  
-> Keys should be managed server-side or via environment variables.
+| Provider | Endpoint Purpose | Authentication |
+| :--- | :--- | :--- |
+| [CoinGecko API](https://www.coingecko.com/en/api) | Live BTC/ETH prices & 7-day historical market chart | Free / No API Key |
+| [Open-Meteo API](https://open-meteo.com/) | Real-time weather forecast & telemetry | Free / No API Key |
 
 ---
 
 ## 📄 License
 
-MIT License — feel free to use, modify, and distribute.
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
